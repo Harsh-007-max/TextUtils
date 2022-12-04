@@ -39,15 +39,15 @@ export default function TextForm(props) {
             <label htmlFor="myBox" className="form-label"><h3>{props.heading}</h3></label>
             <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='light'?'white':'#212529' ,color: props.mode==='light'?'black':'white'}} id="myBox" rows="8"></textarea>
         </div>
-        <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
-        <button className="btn btn-primary mx-1" onClick={handleDnClick}>Convert to Lowercase</button>
-        <button className="btn btn-primary mx-1" onClick={handleClear}>Clear Text Box</button>
-        <button className="btn btn-primary mx-1" onClick={handleCopy}>Copy</button>
-        <button className="btn btn-primary mx-1" onClick={handleEXSP}>Remove Extra Spaces</button>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleDnClick}>Convert to Lowercase</button>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleClear}>Clear Text Box</button>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>Copy</button>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleEXSP}>Remove Extra Spaces</button>
     </div>
     <div className={`container text-${props.mode==='light'?'dark':'light'} my-2`} >
         <h2>Your text summary</h2>
-        <p>{text===""?0:text.split(" ").length} words nad {text.length} characters</p>
+        <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words nad {text.length} characters</p>
         <p>{0.008 * text.split(" ").length} Minutes to read</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"Enter Someting in the textbox above to preview it here"}</p>
