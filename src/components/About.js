@@ -4,12 +4,12 @@ import { useState } from 'react'
 export default function About(props) {
     let myStyle={
       color: props.mode ==='dark'?'white':'#042743',
-      backgroundColor: props.mode ==='dark'?'#042743':'white',
+      backgroundColor: props.mode ==='dark'?'rgb(36 74 104)':'white',
       border: '2px solid',
       borderColor: props.mode === 'dark'?'#042743':'white'
     }
   return (
-    <div className="container" style={myStyle}>
+    <div className="container" style={{color: props.mode ==='dark'?'white':'#042743'}}>
         <h1 className='my-3'>About Us</h1>
         <div className="accordion" id="accordionExample" >
           <div className="accordion-item">
